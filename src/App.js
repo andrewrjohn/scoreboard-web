@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="h-screen w-full bg-black text-white flex">
       <div className="w-32 px-6 border-r border-white flex flex-col items-center justify-center">
-        <div className="my-4 cursor-pointer">MLB</div>
+        <div className="my-4 cursor-pointer border-b-2">MLB</div>
         <div className="my-4 cursor-pointer">NFL</div>
         <div className="my-4 cursor-pointer">NBA</div>
       </div>
