@@ -11,6 +11,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
+    "react-sports-hooks": "^1.0.0",
     "tailwindcss": "^1.8.5"
   },
   "scripts": {
