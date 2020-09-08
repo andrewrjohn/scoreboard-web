@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/main.css";
-import Score from "./components/Score";
+import MLBScore from "./components/MLBScore";
 import { useScores } from "react-sports-hooks";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       </div>
       <div className="flex w-full flex-wrap py-12 h-screen overflow-x-auto">
         {scores.map((s) => (
-          <Score key={s.shortName + s.startTime} game={s} />
+          <MLBScore key={s.shortName + s.startTime} game={s} />
         ))}
       </div>
     </div>

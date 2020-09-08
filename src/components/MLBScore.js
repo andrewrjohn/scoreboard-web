@@ -17,7 +17,7 @@ import ArrowDownIcon from "../icons/ArrowDownIcon";
 //   "December",
 // ];
 
-export default function Score({ game }) {
+export default function MLBScore({ game }) {
   const date = new Date(game.startTime);
   //   const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
   //   const month = monthNames[date.getMonth() - 1];
@@ -34,6 +34,7 @@ export default function Score({ game }) {
   const startDate = `${hours}:${minutes} ${hours > 12 ? " AM" : " PM"}`;
 
   const topInning = game.status.detail.includes("Top") ? true : false;
+  const isFinal = game.status.detail.includes("Final");
 
   return (
     <div className="flex whitespace-no-wrap flex-no-wrap mb-24 w-1/2 px-20">
@@ -44,13 +45,17 @@ export default function Score({ game }) {
           } font-semibold`}
         >
           {game.status.state !== "pre" ? (
-            topInning ? (
+            isFinal ? (
+              game.status.detail
+            ) : topInning ? (
               <ArrowUpIcon className="w-5 mr-1" />
             ) : (
               <ArrowDownIcon className="w-5 mr-1" />
             )
           ) : null}
-          {game.status.state === "pre" ? startDate : game.status.inning}
+          {game.status.state === "pre"
+            ? startDate
+            : !isFinal && game.status.inning}
         </div>
         <div className="mt-4 flex items-center font-semibold text-6xl">
           <div className="flex-1 flex">
